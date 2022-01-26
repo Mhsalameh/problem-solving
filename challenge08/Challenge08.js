@@ -138,15 +138,26 @@ const getInfo = (arr) => {
 
 const getStudents = (arr) => {
   // write your code here
- let result=[];
+/*  let result=[];
     for (const obj of courses){
             for (const x of arr){
                 for (const element of obj.Students){
                     if (x==element){
-                        result.unshift({Student: x, course: obj.course});
+                        result.push({Student: x, course: obj.course});
                     }
                 }
             }
+    }
+    return result; */
+    let result=[];
+    for (const x of arr){
+      for(const obj of courses){
+        for (const element of obj.Students){
+          if (x==element){
+            result.push({Student: x, course: obj.course});
+          }
+        }
+      }
     }
     return result;
 };
